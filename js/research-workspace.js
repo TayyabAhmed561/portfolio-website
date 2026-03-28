@@ -189,12 +189,16 @@
         });
     }
 
+    let subtabDelegationBound = false;
+
     function initSubtabs() {
-        document.querySelectorAll("[data-research-subtab]").forEach((btn) => {
-            btn.addEventListener("click", () => {
-                const key = btn.getAttribute("data-research-subtab");
-                if (key) setResearchSubtab(key);
-            });
+        if (subtabDelegationBound) return;
+        subtabDelegationBound = true;
+        document.addEventListener("click", (e) => {
+            const btn = e.target.closest("[data-research-subtab]");
+            if (!btn) return;
+            const key = btn.getAttribute("data-research-subtab");
+            if (key) setResearchSubtab(key);
         });
     }
 

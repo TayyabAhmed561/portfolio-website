@@ -1460,7 +1460,8 @@ main {
     background: transparent;
 }
 
-.tab-nav button {
+.tab-nav button,
+.tab-nav a {
     display: block;
     width: 100%;
     text-align: left;
@@ -1477,9 +1478,12 @@ main {
     position: relative;
     transition: color 0.22s var(--ease-out), background 0.22s, transform 0.22s var(--ease-out);
     border-radius: 8px;
+    text-decoration: none;
+    box-sizing: border-box;
 }
 
-.tab-nav button::before {
+.tab-nav button::before,
+.tab-nav a::before {
     content: "";
     position: absolute;
     left: 0;
@@ -1492,19 +1496,22 @@ main {
     transition: height 0.25s var(--ease-out), transform 0.25s var(--ease-out);
 }
 
-.tab-nav button:hover {
+.tab-nav button:hover,
+.tab-nav a:hover {
     color: rgba(250, 252, 255, 0.98);
     background: rgba(255, 255, 255, 0.04);
     transform: translateX(3px);
 }
 
-.tab-nav button.is-active {
+.tab-nav button.is-active,
+.tab-nav a.is-active {
     color: rgba(252, 254, 255, 0.99);
     font-weight: 550;
     background: rgba(255, 255, 255, 0.05);
 }
 
-.tab-nav button.is-active::before {
+.tab-nav button.is-active::before,
+.tab-nav a.is-active::before {
     height: 60%;
     transform: translateY(-50%) scaleY(1);
 }
@@ -2630,7 +2637,8 @@ main {
         gap: 0.5rem 1rem;
     }
 
-    .tab-nav button {
+    .tab-nav button,
+    .tab-nav a {
         width: auto;
     }
 
